@@ -1,0 +1,21 @@
+@import "../../styles-myraeasy/main.scss";
+@import '~bootstrap/scss/bootstrap';
+
+.ngb-highlight {
+    font-weight: normal !important;
+    background-color: yellow;
+}
+
+.ngb-highlight .ngb-highlight:first-child {
+    font-weight: bold !important;
+    background-color: yellow;
+}
+
+.logo {
+    display: inline-block;
+    background: center url("/assets/logos/icon-plus.svg") no-repeat;
+    background-size: cover;
+    margin-left: 5px;
+    height: 10px;
+    width: 10px;
+}

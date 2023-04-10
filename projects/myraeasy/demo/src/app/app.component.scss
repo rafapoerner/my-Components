@@ -1,0 +1,133 @@
+.title-page {
+    font-family: 'Maison Neue Extended SemiBold';
+    text-transform: uppercase;
+    font-size: 22px;
+    color: white;
+}
+
+
+.version {
+    color: #000;
+    font-size: 10pt;
+    font-weight: 100;
+    margin-left: 10px;
+}
+
+code span {
+    display: block;
+}
+
+.div-menu {
+    position: relative;
+}
+
+.accordion-button {
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.group {
+    outline-style: none;
+}
+
+.badge {
+    min-width: 80px;
+    padding: 6px 15px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.badge-radius {
+    border-radius: 50PX;
+    margin-left: 10px;
+    font-size: 8pt;
+    padding: 5px;
+    background-color: #7d8492;
+    vertical-align: middle;
+}
+
+.group.group-component {
+    background-color: #e8f6f0;
+}
+
+.group.group-service {
+    background-color: #fbf1e6;
+}
+
+.group.group-styles {
+    background-color: #f6e8e8;
+}
+
+
+.badge.badge-component {
+    background-color: #49cc90;
+    padding: 1.4em;
+}
+
+.badge.badge-service {
+    background-color: #fca130;
+    padding: 1.4em
+}
+
+.badge.badge-styles {
+    background-color: #f93e3e;
+    padding: 1.4em
+}
+
+
+.panel-scroll {
+    background: #fff;
+    border: 1px solid #e7e5e4;
+    color: #6a6c6f;
+    margin: 0 15px 5px 15px px;
+    padding: 10px;
+    overflow-x: auto;
+    min-height: 395px;
+}
+
+.align-big-number {
+    height: 80px;
+    padding: 0;
+    margin: o;
+}
+
+.border-big-number {
+    border-right: 5px solid #bfc1c2;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.row-card {
+    padding-right: 0px;
+    margin-left: -12px;
+}
+
+.card-demostration {
+    border: 2px solid rgb(232, 232, 232);
+    border-radius: 1px;
+    margin-bottom: 23px;
+}
+
+.card-demostration-header {
+    padding: 1em;
+}
+
+.card-demostration-code-header span {
+    font-size: 10px;
+}
+
+.card-demostration-code {
+    background-color: #e4e4e4;
+}
+
+.card-demostration-code-header {
+    color: rgb(165, 165, 165);
+    border-top: 1px solid rgb(222, 222, 222);
+    border-bottom: 1px solid rgb(222, 222, 222);
+    padding: .1em .2em;
+}
+
+h4, .h4 {
+  margin-top: 50px;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@myraeasy/styles-myraeasy",
+  "version": "0.0.3",
+  "author": {
+    "name": "Antonio Pinheiro",
+    "email": "antonio.pinheiro@kaizenconsultoria.net"
+  },
+  "peerDependencies": {
+    "@angular/common": "^13.3.0",
+    "@angular/core": "^13.3.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

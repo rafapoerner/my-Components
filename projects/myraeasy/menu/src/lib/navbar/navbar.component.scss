@@ -1,0 +1,16 @@
+.navbar-myraeasy {
+
+    background-color: var(--black, #000);
+
+    .btn-home,
+    .container-btns>button {
+        background-color: transparent;
+        height: 100%;
+        margin-right: 1rem;
+        border: none;
+    }
+
+    .container-btns>button:hover {
+        transform: scale(1.3);
+    }
+}

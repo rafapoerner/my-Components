@@ -1,0 +1,98 @@
+*{
+  font-family: Arial;
+}
+
+.chart-content {
+  display: flex;
+  width: 100%;
+  height: 600px;
+  border: 1px solid #e6e8ec;
+  flex-direction: column;
+  align-items: center;
+  // border: 1px solid red;
+
+  .chart-title {
+    margin-top: 25px;
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    // border: 1px solid blue;
+  }
+
+  p {
+    opacity: 0.5;
+  }
+
+  .chart-goal {
+    display: flex;
+    flex-direction: row;
+    width: 186px;
+    justify-content: space-between;
+    // margin-top: -7px;
+    align-items: baseline;
+    // border: 1px solid red;
+  }
+
+  .chart-svg-goal {
+    margin-left: -39px;
+    // border: 1px solid red;
+  }
+
+  .chart-average {
+    display: flex;
+    flex-direction: row;
+    width: 335px;
+    justify-content: space-between;
+    margin-top: -23px;
+    align-items: baseline;
+    // border: 1px solid red;
+  }
+
+  .chart-svg-average {
+    margin-top: 16px;
+    margin-right: -22px;
+    color: rgb(137, 193, 137);
+    // border: 1px solid red;
+  }
+}
+
+.chart-highcharts {
+  margin-right: -80px;
+  width: 100%;
+  // border: 1px solid red;
+}
+
+.chart-days {
+  display: flex;
+  margin-left: 51px;
+  letter-spacing: -.0px;
+  word-spacing: 6.5px;
+  font-size: 1rem;
+  margin-top: -3px;
+  cursor: pointer;
+  // border: 1px solid red;
+}
+
+.chart-days-2 {
+  margin-left: 15px;
+  word-spacing: 16px;
+  letter-spacing: -0.3px;
+  font-size: 1rem;
+  // border: 1px solid red;
+}
+.chart-days-3 {
+  margin-left: 15px;
+  word-spacing: 6.4px;
+  font-size: 1rem;
+  // border: 1px solid red;
+}
+
+.chart-mounth {
+  display: flex;
+  margin-left: -113px;
+  padding: 0px;
+  width: 690px;
+  margin-top: -20px;
+  justify-content: space-around;
+  // border: 1px solid red;
+}

@@ -1,0 +1,136 @@
+$color-label: #{var(--gray-100,  #f8f9fa)};
+$color-title-submenu: #{var(--gray-50,#f8f8f8)};
+$color-label-submenu: #{var(--gray-550,#A9A9A9 )};
+$bg-submenu: #{var(--gray-900,#212529)};
+$bg-submenu-hover: #{var(gray-900,#212529)};
+$bg-menu: #{var(--black,#000)};
+
+$scrolbas-thumb-color: #{var(--myra-primary-100,#b26600)};
+
+@mixin scroll-y($color: "#FFF", $width: 6px) {
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $color;
+
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: $color;
+    }
+}
+
+
+figure {
+    padding: 0;
+    margin: 0;
+}
+
+.container-siderbar {
+    background-color: $bg-submenu;
+    width: max-content;
+    height: 100%;
+    display: inline-block;
+
+
+    .btn-menu {
+
+        background-color: transparent;
+        text-align: center;
+        width: max-content;
+        transition: all 2s;
+        border: none;
+        margin-left: .2rem;
+        transition: transform .3s ease;
+
+        &.open {
+            transform: rotate(90deg);
+        }
+    }
+
+    .bg-menu {
+        background-color: $bg-menu;
+    }
+
+    .bg-submenu {
+        background-color: $bg-submenu;
+    }
+
+    button.item-menu {
+        background-color: transparent;
+    }
+
+    .item-menu {
+        display: flex;
+        color: $color-label;
+        align-items: center;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover,
+        &.active {
+            background-color: $bg-submenu;
+        }
+
+        .text-label-menu {
+            font-family: 'Maison Neue Extended Light';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 17px;
+            color: var(--gray-50, #F8F8F8);
+        }
+    }
+
+    .submenu {
+        min-width: 12rem;
+        color: $color-label;
+        overflow: hidden;
+        overflow-y: scroll;
+        @include scroll-y($scrolbas-thumb-color, 2px);
+
+        .title-submenu {
+            font-family: 'Maison Neue Extended Light';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 20px;
+            text-transform: capitalize;
+            color: $color-title-submenu;
+
+        }
+
+        li {
+            background-color: transparent;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $bg-submenu-hover;
+            }
+        }
+
+        .link-submenu {
+            font-family: 'Maison Neue Extended Light';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 17px;
+
+            text-decoration: none;
+            color: $color-label-submenu;
+            text-transform: capitalize;
+            width: auto;
+            height: 100%;
+            display: block;
+        }
+    }
+}

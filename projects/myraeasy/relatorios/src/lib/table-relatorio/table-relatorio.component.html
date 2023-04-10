@@ -1,0 +1,56 @@
+<div>
+    <div *ngIf="showOptions" style="padding-right: 0.4rem;">
+        <ngb-accordion #acc="ngbAccordion" activeIds="custom-panel-1" (click)="acc.toggle('toggle-1')">
+            <ngb-panel id="toggle-1">
+                <ng-template ngbPanelHeader let-opened="opened">
+                    <div class="accordion-button custom-header justify-content-end" [class.collapsed]="!opened">
+                    </div>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                    <div class="options col-4" (click)="$event.stopPropagation()">
+                        <div class="d-flex justify-content-end">
+                            <input type="text" class=" form-control w-25 me-4 flex-fill input-search"
+                                placeholder="pesquisar" (keyup)="filter($event.target)">
+                            <button class="btn btn-primary" (click)="exportarTabela()">Exportar</button>
+                        </div>
+                    </div>
+                </ng-template>
+            </ngb-panel>
+        </ngb-accordion>
+    </div>
+
+    <div class="table-responsive" [style.maxHeight.px]="gridModel.maxContainerHight">
+        <table [id]="codigo" class="table table-borderless table-striped table-hover position-relative">
+            <thead class="table-dark position-sticky top-0">
+                <tr *ngFor="let collection of collectionsHeader">
+                    <th [sortable]="item.label" [cellItem]="item" (sort)="onSort($event)" class="th cursor"
+                        [class.sub-division]="item.subDivision == true" [ngClass]="getClasses(item,i)"
+                        [attr.rowspan]="item.rowSpan" [attr.colspan]="item.colSpan"
+                        *ngFor="let item of collection.cells; let i=index;">
+
+                        <section [ngSwitch]="item.tipoTemplate">
+                            <section *ngSwitchCase="2" class="d-flex" [ngClass]="getClasses(item,i)">
+                                <span> {{item.label }} </span>
+                                <a [ngClass]="getClassLinkUrl(item.classUrl)" [routerLink]="[item.urlToTemplate]"></a>
+                            </section>
+                            <section *ngSwitchCase="1" class="d-flex" [ngClass]="getClasses(item,i)">
+                                <span> {{item.label }} </span>
+                                <span [innerHTML]="item.templateHtml"></span>
+                            </section>
+                            <section *ngSwitchDefault [ngClass]="getClasses(item,i)"> {{item.label }}
+                            </section>
+                        </section>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let collection of collections | filterTable:search">
+                    <td class="cell-body" [attr.colspan]="item.colSpan" *ngFor="let item of collection.cells">
+                        <ngb-highlight [result]="convert(item)" [term]="search"></ngb-highlight>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

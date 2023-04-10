@@ -1,0 +1,188 @@
+<div class="container mt-3 pb-3">
+  <div class="row">
+    <h1>
+      MyraEasy Core<span class="version">@myraeasy v{{ version }}</span>
+      <a rel="noopener" href="http://10.221.30.26:4873/" target="_blank" class="version">Verdaccio</a>
+    </h1>
+  </div>
+</div>
+<div class="group mb-4 mt-4 ps-5 pe-5">
+  <h4>
+    Forms<span class="badge badge-radius"> v{{ inputVersion }}</span>
+  </h4>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed group group-component" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapseHeader" aria-expanded="false" aria-controls="collapseHeader">
+        <span class="badge badge-component">COMPONENT</span>
+        forms
+        <span class="version">/myraeasy-input-magic-eye</span>
+      </button>
+    </h2>
+    <div id="collapseHeader" class="accordion-collapse collapse" aria-labelledby="headingHeader"
+      data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="row">
+          <myraeasy-input-magic-eye [classInput]="'form-control'">
+          </myraeasy-input-magic-eye>
+        </div>
+        <div class="row mb-3 mt-3">
+          <myraeasy-openbox [model]="openBoxModel" (clickButton)="clickButtonOpenBox($event)"
+            (clickItemSelected)="itemSelected($event)">
+          </myraeasy-openbox>
+        </div>
+      </div>
+    </div>
+
+
+    <h4>
+      Menus<span class="badge badge-radius"> v{{ inputVersion }}</span>
+    </h4>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed group group-component" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseMenu" aria-expanded="false" aria-controls="collapseHeader">
+          <span class="badge badge-component">COMPONENT</span>
+          Navbar
+          <span class="version">/myraeasy-navbar</span>
+        </button>
+      </h2>
+      <div id="collapseMenu" class="accordion-collapse collapse" aria-labelledby="headingHeader"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <div class="row mb-5 mt-3">
+            <myraeasy-navbar [navbarModel]="navbar" (onEventNavigation)="navigationNavbar($event)">
+              <span class="title-page ">titulo da página</span>
+            </myraeasy-navbar>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed group group-component" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseSiderbar" aria-expanded="false" aria-controls="collapseHeader">
+            <span class="badge badge-component">COMPONENT</span>
+            Siderbar
+            <span class="version">/myraeasy-siderbar</span>
+          </button>
+        </h2>
+        <div id="collapseSiderbar" class="accordion-collapse collapse " aria-labelledby="headingHeader"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body container">
+            <div class="mb-5 mt-3" style="height: 30rem;">
+              <div class="d-flex bg-secondary" style="height: 30rem;">
+                <myraeasy-siderbar [siderbarModel]="siderbarModel"></myraeasy-siderbar>
+                <div>
+                  <img class="pt-3 ps-5" src="/assets/logos/logo-myra-easy-b.svg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h4>
+    Chart<span class="badge badge-radius"> v{{ inputVersion }}</span>
+  </h4>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed group group-component" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapseChart" aria-expanded="false" aria-controls="collapseHeader">
+        <span class="badge badge-component">COMPONENT</span>
+        Chart
+        <span class="version">/myraeasy-chart</span>
+      </button>
+    </h2>
+    <div id="collapseChart" class="accordion-collapse collapse" aria-labelledby="headingHeader"
+      data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="row mb-5 mt-3">
+          <myraeasy-chart [chartOptions$]="chartItemsOptions"></myraeasy-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4>
+    Accordion<span class="badge badge-radius"> v{{ inputVersion }}</span>
+  </h4>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed group group-component" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapseAccordion" aria-expanded="false" aria-controls="collapseHeader">
+        <span class="badge badge-component">COMPONENT</span>
+        Accordion
+        <span class="version">/myraeasy-accordion</span>
+      </button>
+    </h2>
+    <div id="collapseAccordion" class="accordion-collapse collapse" aria-labelledby="headingHeader"
+      data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="row mb-5 mt-3">
+          <myraeasy-accordion></myraeasy-accordion>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Relatorios -->
+  <h4>
+    Relatorios<span class="badge badge-radius"> v{{ inputVersion }}</span>
+  </h4>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed group group-component" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapseRelatorio" aria-expanded="false" aria-controls="collapseHeader">
+        <span class="badge badge-component">COMPONENT</span>
+        Grid
+        <span class="version">/myraeasy-grid</span>
+      </button>
+    </h2>
+    <div id="collapseRelatorio" class="accordion-collapse collapse" aria-labelledby="headingHeader"
+      data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="row mb-5 mt-3">
+          <myraeasy-grid [gridModel]="gridModelTeste">
+          </myraeasy-grid>
+        </div>
+        <div class="row mb-5 mt-3">
+          <myraeasy-grid [gridModel]="gridModelNexidiaOptions"></myraeasy-grid>
+        </div>
+        <div class="row mb-5 mt-3">
+          <div class="d-flex justify-content-end pb-2">
+            <input type="text" class="form-control w-25 me-2" (keyup)="filterText($event)">
+            <button class="btn btn-primary" (click)="exportarExcel()">Exportar</button>
+          </div>
+          <myraeasy-grid [gridModel]="gridModelTwo"></myraeasy-grid>
+        </div>
+
+        <div class="row mb-5 mt-3">
+          <myraeasy-grid [gridModel]="gridModelThree">
+          </myraeasy-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4>
+    Multi-Select<span class="badge badge-radius"> v{{ inputVersion }}</span>
+  </h4>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed group group-component" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapseMultiSelect" aria-expanded="false" aria-controls="collapseHeader">
+        <span class="badge badge-component">COMPONENT</span>
+        Multi-Select
+        <span class="version">/myraeasy-multi-select</span>
+      </button>
+    </h2>
+    <div id="collapseMultiSelect" class="accordion-collapse collapse show" aria-labelledby="headingHeader"
+      data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="row mb-2 mt-2">
+          <myraeasy-multiselect [listMultiSelect$]="listMulti"></myraeasy-multiselect>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

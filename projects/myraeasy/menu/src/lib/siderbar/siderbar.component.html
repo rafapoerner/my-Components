@@ -1,0 +1,40 @@
+<aside class="d-flex flex-nowrap container-siderbar">
+    <!-- div Menu labels -->
+
+    <div class="">
+        <div class="h-100 bg-menu pt-3">
+            <button class="btn-menu" (click)="openMenu()" [ngClass]="{'open':showLabels}">
+                <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 9.01761H24M7 16.0313H24M7 23.045H24" stroke="white" stroke-miterlimit="10"
+                        stroke-linecap="round" />
+                </svg>
+            </button>
+            <div *ngFor="let item  of siderbarModel.itensList">
+                <a [itemSiderbar]="item" class="item-menu">
+                    <div class="d-flex flex-wraper p-2" (click)="getSubItens(item)">
+                        <figure class="">
+                            <img [src]="item.icone">
+                        </figure>
+                    </div>
+                    <div *ngIf="showLabels" (click)="getSubItens(item)">
+                        <span class="d-flex align-items-center ps-5 pe-5 text-label-menu">{{ item.label }}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- div submenus -->
+    <div class="submenu" *ngIf="showSubMenu">
+        <div class="d-flex justify-content-center w-100 pt-4 pb-3">
+            <span class="title-submenu">{{titleSubmenu}}</span>
+        </div>
+        <div>
+            <ul class="list-unstyled">
+                <li class="" *ngFor="let subitem of itensSubMenu$ | async">
+                    <a class="pb-2 pt-2 ps-3 link-submenu" [routerLink]="[subitem.url]">{{
+                        subitem.label}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</aside>

@@ -1,0 +1,11 @@
+{
+  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../dist/myraeasy/styles-myraeasy",
+  "assets": [
+    "./assets",
+    "./**/*.scss"
+  ],
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  }
+}

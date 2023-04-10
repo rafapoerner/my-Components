@@ -1,0 +1,22 @@
+.forecast-accordion {
+  display: flex;
+  width: 200%;
+  justify-content: space-around;
+  flex-direction: row;
+  border: none;
+
+
+  .forecast-pencil-svg {
+    margin-left: -50px;
+  }
+
+  .forecast-arrow_down-svg{
+    margin-right: -60px;
+  }
+
+
+}
+.forecast-accordion1{
+  margin: -18px -22px -18px -22px;
+
+}

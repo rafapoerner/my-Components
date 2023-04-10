@@ -1,0 +1,22 @@
+<div class="input-group mb-3 magic-eye-container">
+    <input type="text" class="form-control" [type]="openText ? 'text' : 'password'" aria-label="" [(ngModel)]="value"
+        aria-describedby="basic-addon2">
+    <span class="input-group-text" id="basic-addon2">
+        <button type="button" class="btn-magic-eye d-flex align-items-center" (click)="onOpenText()">
+            <svg *ngIf="openText" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 5.58784C5.59406 -0.680989 11.8754 -0.375668 16 5.58784" stroke="#B4B4B4"
+                    stroke-width="0.7" />
+                <path d="M1.07031 5.51744C5.6426 12.1228 11.8942 11.8011 15.9992 5.51747" stroke="#B4B4B4"
+                    stroke-width="0.7" />
+                <circle cx="8.4647" cy="5.65903" r="2.4936" stroke="#B4B4B4" stroke-width="0.7" />
+            </svg>
+            <svg *ngIf="!openText" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 7.43941C5.59406 1.17057 11.8754 1.47589 16 7.43941" stroke="#B4B4B4" stroke-width="0.7" />
+                <path d="M1.07031 7.369C5.6426 13.9744 11.8942 13.6527 15.9992 7.36904" stroke="#B4B4B4"
+                    stroke-width="0.7" />
+                <circle cx="8.4647" cy="7.51059" r="2.4936" stroke="#B4B4B4" stroke-width="0.7" />
+                <path d="M1.5 14.3516L15.5 0.351562" stroke="#B4B4B4" stroke-width="0.7" />
+            </svg>
+        </button>
+    </span>
+</div>

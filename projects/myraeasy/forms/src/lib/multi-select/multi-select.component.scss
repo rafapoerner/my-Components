@@ -1,0 +1,147 @@
+$light-gray: #dde4eb;
+$dark-gray: #45484b;
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: white;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $light-gray;
+  border-radius: 20px;
+}
+
+.multiselect-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.span-icons {
+  margin-right: 4px;
+  background-color: $light-gray;
+  color: $dark-gray;
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 4px 5px 4px 7px;
+  text-overflow: ellipsis !important;
+}
+
+.accordion-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.custom-button {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5rem 0.75rem;
+  max-width: 100%;
+}
+
+.all_selected {
+  margin-top: 10px;
+  margin-left: 9px;
+}
+
+.overflow {
+  height: 200px;
+  overflow-y: auto;
+}
+
+.input-search {
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid $light-gray;
+  padding: 5px;
+  margin-right: 10px;
+  margin: 17px 0 13px 0;
+  width: 90%;
+  position: relative;
+  top: 0;
+  left: 11px;
+
+  input {
+    outline: none;
+    border: none;
+    background-color: white;
+    color: $dark-gray;
+    width: 100%;
+
+    &::placeholder {
+      color: rgba($dark-gray, 0.3);
+      font-style: italic;
+      font-size: 15px;
+    }
+  }
+
+  .span-icon {
+    color: rgba($dark-gray, 0.3);
+  }
+}
+
+.check_box {
+  margin-left: -10px;
+}
+
+.renderer-items {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.selected-item {
+  max-width: 100%;
+  margin-left: 4px;
+  background-color: #dde4eb;
+  color: #45484b;
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 4px 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis !important;
+}
+// .selected-item:hover{
+//   white-space: nowrap;
+//   overflow: visible;
+// }
+
+.check-items {
+  color: $dark-gray;
+  margin-left: 5px;
+}
+
+.hidden-items-info {
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 0px 10px;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+.selected-items_header {
+  display: flex;
+  flex-wrap: wrap;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.selected-items_plus {
+  margin-right: 20px;
+}
+
+.check-items_header {
+  margin-top: 8px;
+  font-weight: 600;
+}

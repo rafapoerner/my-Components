@@ -1,0 +1,16 @@
+{
+  "name": "@myraeasy/forms",
+  "version": "0.0.2",
+  "author": {
+    "name": "Rafa Poerner",
+    "email": "rafa_poerner@hotmail.com"
+  },
+  "description": "Resources Forms for MyraEasy  SPA",
+  "peerDependencies": {
+    "@angular/common": "^13.3.0",
+    "@angular/core": "^13.3.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

@@ -1,0 +1,21 @@
+@mixin scroll-y($color: "#FFF", $width: 6px) {
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $color;
+
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: $color;
+    }
+}

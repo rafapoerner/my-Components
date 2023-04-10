@@ -1,0 +1,9 @@
+.ngb-highlight {
+    font-weight: normal !important;
+    background-color: yellow;
+}
+
+.ngb-highlight .ngb-highlight:first-child {
+    font-weight: bold !important;
+    background-color: yellow;
+}

@@ -1,0 +1,44 @@
+<form #myForm="ngForm" name="myForm"  (submit)="onFormSubmit($event)">
+  <div class="multiselect-container">
+    <ngb-accordion class="accordion-header" #myAccordion [activeIds]="'1'">
+      <ngb-panel id="" ngbPanelOptions="{destroyOnHide: false}">
+        <ng-template ngbPanelHeader>
+          <button #accordionButton ngbPanelToggle class="accordion-button custom-button" (click)="onAccordionClick(myAccordion)"></button>
+        </ng-template>
+
+        <ng-template ngbPanelContent>
+          <div class="all_selected">
+            <input class="form-check-input m-1 check_box" type="checkbox" [(ngModel)]="selectAll"
+              (click)="selectAllCheckboxes()" name="selectAll" />
+            Selecionar todos
+          </div>
+          <div class="input-search">
+            <input type="text" placeholder="Pesquisar" [(ngModel)]="filter" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="overflow">
+            <div class="accordion-body check_box">
+              <div *ngFor="let item of listFiltered | filter:filter">
+                <div class="check-items_header">
+                  <span class="check-items">{{ item.title}}</span>
+                </div>
+                <div *ngFor="let items of item.dropdownList">
+                  <label>
+                    <input appCheckboxButton class="form-check-input m-1 " type="checkbox" [(ngModel)]="items.selected"
+                    (change)="updateSelectedItems()" name="checkBoxes" required [ngModelOptions]="{standalone: true}"
+                    value="{{ items.value }}"
+                    [name]="'checkBoxes'+items.value"/>
+
+                    <span class="check-items">{{ items.label }}</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div id="checkbox-values"></div>
+          <button type="submit" class="btn btn-primary">Enviar</button> -->
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
+</form>
+

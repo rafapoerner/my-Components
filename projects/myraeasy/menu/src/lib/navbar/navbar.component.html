@@ -1,0 +1,62 @@
+<nav class="navbar-myraeasy bg-color-black ps-2 ">
+    <div class="d-flex">
+        <button class="ps-2 pb-2 btn-home" (click)="navigationClick('home')">
+            <img [src]="navbarModel.logoHome" alt="">
+        </button>
+        <div class="flex-fill d-flex justify-content-center align-items-center">
+            <ng-content select="span"></ng-content>
+        </div>
+
+        <div class="d-flex  flex-row-reverse me-3 container-btns">
+            <button class="btn-logout" (click)="navigationClick('logout')" ngbTooltip="Sair">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M20.203 21.7846V24.8616C20.203 25.2696 20.0414 25.6609 19.7538 25.9494C19.4662 26.2379 19.0761 26.4 18.6693 26.4H7.93401C7.52727 26.4 7.13719 26.2379 6.84958 25.9494C6.56197 25.6609 6.40039 25.2696 6.40039 24.8616V7.93849C6.40039 7.53046 6.56197 7.13915 6.84958 6.85063C7.13719 6.56211 7.52727 6.40002 7.93401 6.40002H18.6693C19.0761 6.40002 19.4662 6.56211 19.7538 6.85063C20.0414 7.13915 20.203 7.53046 20.203 7.93849V11.0154"
+                        stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M15.6016 16.4001H26.3369" stroke="#FDB933" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M23.2705 13.3229L26.3377 16.3999L23.2705 19.4768" stroke="#FDB933" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button class="btn-resetpassword" (click)="navigationClick('resetpassword')" ngbTooltip="Resetar Senha">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M18.8032 14.4239H12.5944C12.1658 14.4239 11.8184 14.7847 11.8184 15.2298V20.065C11.8184 20.5101 12.1658 20.8709 12.5944 20.8709H18.8032C19.2318 20.8709 19.5792 20.5101 19.5792 20.065V15.2298C19.5792 14.7847 19.2318 14.4239 18.8032 14.4239Z"
+                        stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M18.415 14.4235V13.2147C18.415 12.4667 18.1289 11.7492 17.6194 11.2203C17.11 10.6913 16.4191 10.3942 15.6987 10.3942C14.9783 10.3942 14.2874 10.6913 13.778 11.2203C13.2686 11.7492 12.9824 12.4667 12.9824 13.2147V14.4235"
+                        stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M15.6996 17.7503C15.9139 17.7503 16.0876 17.5699 16.0876 17.3473C16.0876 17.1248 15.9139 16.9444 15.6996 16.9444C15.4853 16.9444 15.3115 17.1248 15.3115 17.3473C15.3115 17.5699 15.4853 17.7503 15.6996 17.7503Z"
+                        fill="#FDB933" stroke="#FDB933" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M15.7166 17.7784C15.8163 17.7784 15.8971 17.9211 15.8971 18.097C15.8971 18.273 15.8163 18.4156 15.7166 18.4156C15.6169 18.4156 15.5361 18.273 15.5361 18.097C15.5361 17.9211 15.6169 17.7784 15.7166 17.7784Z"
+                        fill="#FDB933" stroke="#FDB933" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M5.71274 19.4222C5.082 17.4741 5.0234 15.3761 5.54436 13.3934C6.06531 11.4107 7.14242 9.63245 8.63948 8.28343C10.1365 6.93441 11.9863 6.07525 13.9549 5.81459C16.8057 5.4338 19.6884 6.20642 22.0025 7.97151"
+                        stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M20.8799 4.90214L22.0346 7.97835L19.0762 9.17969" stroke="white" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path
+                        d="M25.5991 13.6171C26.1784 15.5834 26.1817 17.6833 25.6086 19.6514C25.0355 21.6195 23.9117 23.3673 22.3794 24.6739C20.8471 25.9804 18.975 26.787 16.9999 26.9916C14.1396 27.2912 11.2777 26.4364 9.01058 24.6052"
+                        stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M10.0561 27.7097L8.98244 24.6008L11.9727 23.4841" stroke="white" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+
+            <button class="btn-profile" (click)="navigationClick('profile')" ngbTooltip="Perfil">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M18.2601 15.4519C18.6007 14.5911 18.8188 13.8997 18.7631 13.2097C18.7073 12.5197 18.5924 12.1987 18.2601 11.7319C17.6745 11.1044 17.2827 10.8895 16.3994 10.9165C15.6581 10.8892 15.1924 11.1204 14.79 11.7319C14.3877 12.3434 14.3825 12.4724 14.2871 13.2097C14.3608 14.277 14.4835 14.7487 14.79 15.4519C15.3039 16.4806 15.7217 16.7703 16.6508 16.8788C17.4334 16.7111 17.7798 16.3833 18.2601 15.4519Z"
+                        stroke="#FDB933" />
+                    <path
+                        d="M18.0589 18.3566C16.7828 19.1691 16.066 19.2772 14.7899 18.3566L14.7673 18.3651C13.9299 18.6774 13.3891 18.8791 12.2754 19.4268C11.7924 20.1988 11.6537 20.7564 11.5713 21.8728H21.4284C21.4057 20.897 20.6993 19.5599 20.5735 19.4268C20.5735 19.4268 19.166 18.7954 18.0589 18.3566Z"
+                        stroke="white" />
+                    <circle cx="16.5" cy="16.5" r="11" stroke="white" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</nav>

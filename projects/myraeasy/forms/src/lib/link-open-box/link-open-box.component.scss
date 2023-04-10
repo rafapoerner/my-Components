@@ -1,0 +1,167 @@
+// link visao
+
+$color-triangule: #{var(--myra-primary, #fdb933)};
+$color-label: #{var(--gray-100, #f8f9fa)};
+$border-color-input: #{var(--gray-900, #212529)};
+$bg-submenu-hover: #{var(--gray-500,#adb5bd)};
+$scrolbas-thumb-color: #{var(--myra-primary-100,#b26600 )};
+$black: #{var(--black, #000)};
+$gray-500: #{var(--gray-500,#adb5bd )};
+
+
+@mixin scroll-y($color: "#FFF", $width: 6px) {
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $color;
+
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: $color;
+    }
+}
+
+.container-link-vision {
+    display: inline-block;
+    position: relative;
+
+    .panel-vision {
+        top: 30px;
+        padding: .5rem;
+
+        .input-serach {
+            position: relative;
+            margin-top: 8px;
+
+            input {
+                display: block;
+                width: 100%;
+                margin-bottom: 0.5rem;
+                background-color: transparent;
+                border: 2px solid $border-color-input;
+                border-radius: 3px;
+                color: $color-label;
+                padding-left: 1.6rem;
+                font-family: 'Maison Neue Extended Light';
+            }
+
+            svg {
+                position: absolute;
+                top: calc(50% - 5px);
+                left: 0.6rem;
+            }
+        }
+
+    }
+
+    .float-content {
+        position: absolute;
+        background-color: $black;
+        z-index: 3;
+        width: 30rem;
+        min-width: max-content;
+        padding: 1rem 1rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            border-left: 0.4rem solid transparent;
+            border-right: 0.4rem solid transparent;
+            border-bottom: .4rem solid $black;
+            top: -6px;
+
+        }
+    }
+
+
+    .item-list-vision {
+
+        >a {
+            font-family: 'Maison Neue Extended Light';
+            text-decoration: none;
+            color: $color-label;
+            font-weight: normal;
+            letter-spacing: 1px;
+            line-height: 18.59px;
+            padding-left: 1rem;
+            display: block;
+            transition: font-size 1s, transform 1s ease;
+            font-size: 14px;
+            padding: .5rem 1rem;
+            width: 23rem;
+            user-select: none;
+            cursor: pointer;
+
+            &:hover {
+
+                font-size: 18px;
+                transform: translateX(-8px);
+                color: $color-triangule;
+            }
+        }
+    }
+
+    .label-vision {
+        position: relative;
+        font-family: 'Maison Neue Book';
+        user-select: none;
+        margin-right: 1rem;
+        cursor: pointer;
+        color: $gray-500;
+
+        &:hover {
+            color: $color-triangule;
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            border-left: 0.4rem solid transparent;
+            border-right: 0.4rem solid transparent;
+            margin-right: 0.3rem;
+            border-top: 0.3rem solid $color-triangule;
+            bottom: 0.5rem;
+            right: -1.2rem;
+        }
+    }
+
+    .display-list {
+
+        height: 7rem;
+        overflow: hidden;
+        overflow-y: scroll;
+        margin-bottom: 1rem;
+        @include scroll-y($scrolbas-thumb-color, 2px);
+    }
+
+    .btn {
+        padding: 0.2rem 2rem;
+    }
+
+    .btn-close-one {
+        background-color: transparent;
+        color: $color-label;
+        position: absolute;
+        right: 6px;
+        top: 6px;
+        padding: 0;
+        margin: 0;
+        text-transform: lowercase;
+        line-height: 1px;
+
+        &:hover {
+            color: $color-triangule;
+            transform: scale(1.2, 1.2);
+        }
+    }
+}

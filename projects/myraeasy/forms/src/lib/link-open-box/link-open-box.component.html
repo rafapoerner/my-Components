@@ -1,0 +1,34 @@
+<div class="container-link-vision" (click)="$event.stopPropagation()" (keydown.esc)="closeBox($event)">
+    <label class="label-vision" for="" (click)="showBox($event)">{{ model.title }}</label>
+    <ng-container *ngIf="openBox">
+
+        <div focusTrap class="float-content panel-vision">
+            <button class="btn-close-one" type="button" (click)="closeBox($event)">x</button>
+            <div class="input-serach">
+                <input type="text" class="form-control" [(ngModel)]="search" (change)="onKeyUp($event)">
+                <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M9.70846 11.5004L9.70996 11.5004C9.85319 11.5007 10.0016 11.4502 10.1348 11.3421C10.2693 11.233 10.3818 11.0694 10.4456 10.866L10.9227 11.0157L10.4456 10.866C10.5094 10.6627 10.5181 10.4389 10.4693 10.2281C10.4206 10.0172 10.3193 9.83966 10.1904 9.71432L10.1902 9.7141L7.55492 7.14928L7.55479 7.14914C7.39031 6.98894 7.19481 6.92501 7.01199 6.94358C6.82753 6.9623 6.6358 7.0674 6.4904 7.26853C6.34368 7.47149 6.2652 7.74627 6.2867 8.03163C6.29725 8.17154 6.33133 8.30557 6.38526 8.42583C6.43918 8.54606 6.51088 8.64805 6.59313 8.72815L9.22802 11.2926L9.70846 11.5004ZM9.70846 11.5004C9.54523 11.5007 9.37439 11.4348 9.22825 11.2928L9.70846 11.5004Z"
+                        stroke="#A8A8A8" />
+                    <path
+                        d="M6.15703 7.66296C6.06452 7.66319 5.97486 7.62209 5.90363 7.54678L4.96921 6.56174C4.88835 6.47599 4.8375 6.35278 4.82785 6.21921C4.81819 6.08563 4.85053 5.95264 4.91773 5.84948C4.98494 5.74632 5.08152 5.68145 5.18621 5.66913C5.29091 5.65681 5.39515 5.69807 5.47601 5.78381L6.40251 6.76885C6.44261 6.81125 6.47575 6.86334 6.50004 6.92211C6.52433 6.98088 6.5393 7.04519 6.54408 7.11135C6.54886 7.17752 6.54336 7.24423 6.5279 7.30768C6.51244 7.37113 6.48733 7.43006 6.45399 7.48111C6.41762 7.53684 6.37227 7.58192 6.32103 7.6133C6.26979 7.64468 6.21386 7.66162 6.15703 7.66296Z"
+                        fill="#A8A8A8" />
+                    <path
+                        d="M5.53262 3.54178C5.53262 5.30003 4.33374 6.58357 3.01631 6.58357C1.69888 6.58357 0.5 5.30003 0.5 3.54178C0.5 1.78354 1.69888 0.5 3.01631 0.5C4.33374 0.5 5.53262 1.78354 5.53262 3.54178Z"
+                        stroke="#A8A8A8" />
+                </svg>
+            </div>
+            <section class="display-list">
+                <ul class="list-unstyled">
+                    <li class="item-list-vision" *ngFor="let item of list | searchFilter:search:'label'">
+                        <a class="text-truncate" (click)="eventClickLink(item)">{{ item.label }}</a>
+                    </li>
+                </ul>
+            </section>
+            <div class="text-center">
+                <button class="btn btn-primary btn-sm" (click)="eventClick()">Nova Visão</button>
+            </div>
+        </div>
+    </ng-container>
+
+</div>
