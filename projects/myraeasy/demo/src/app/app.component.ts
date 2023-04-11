@@ -2,11 +2,22 @@ import { Component, Input, OnInit } from '@angular/core';
 import { environment } from '../environments/environment';
 import { Observable, Subject, of } from 'rxjs';
 
-import { ItemMultiSelectModel, ItemSelected, LinkOpenBoxModel, ListMultiSelectModel } from '@myraeasy/forms';
-import { ChartModel, SerieChartModel } from '@myraeasy/charts';
-import { AccordionModel } from '@myraeasy/accordions';
-import { ItemSiderBar, NavbarModel, SiderbarModel } from '@myraeasy/menu';
-import { GridModel, CollectionCellModel } from '@myraeasy/relatorios';
+// import { ItemMultiSelectModel, ItemSelected, LinkOpenBoxModel, ListMultiSelectModel } from '@myraeasy/forms';
+// import { ChartModel, SerieChartModel } from '@myraeasy/charts';
+// import { AccordionModel } from '@myraeasy/accordions';
+// import { ItemSiderBar, NavbarModel, SiderbarModel } from '@myraeasy/menu';
+import { GridModel } from 'projects/myraeasy/relatorios/src/lib/table-relatorio/models/grid-model';
+import { CollectionCellModel } from 'projects/myraeasy/relatorios/src/lib/table-relatorio/models/cell-header.model';
+import { AccordionModel } from 'projects/myraeasy/accordions/src/lib/accordions/accordion/models/accordion.models';
+import { NavbarModel } from 'projects/myraeasy/menu/src/lib/navbar/model/navbal-model';
+import { ItemSiderBar, SiderbarModel } from 'projects/myraeasy/menu/src/lib/siderbar/models/siderbar-model';
+
+import { ItemSelected, LinkOpenBoxModel } from 'projects/myraeasy/forms/src/lib/link-open-box/models/link-openbox.model';
+import { ChartModel, SerieChartModel } from 'projects/myraeasy/charts/src/lib/chart/models/charts.models';
+import { ListMultiSelectModel } from 'projects/myraeasy/forms/src/lib/multi-select/models/multi-select.model';
+import { ItemMultiSelectModel } from 'dist/myraeasy/forms/lib/multi-select/models/multi-select.model';
+
+// import { GridModel, CollectionCellModel } from '@myraeasy/relatorios';
 // import { ItemMultiSelectModel, ListMultiSelectModel } from 'projects/myraeasy/multi-select/src/public-api';
 
 

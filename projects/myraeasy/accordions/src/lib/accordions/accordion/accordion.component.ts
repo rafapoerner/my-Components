@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AccordionModel } from './models/accordion.models';
 
 import { DataService } from './services/data.service';
-import { ChartModel } from '@myraeasy/charts';
+
 
 
 @Component({

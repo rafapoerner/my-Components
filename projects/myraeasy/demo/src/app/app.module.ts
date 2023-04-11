@@ -5,13 +5,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
-import { HighchartsChartModule } from 'highcharts-angular';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { AccordionModule } from '@myraeasy/accordions';
-import { ChartsModule } from '@myraeasy/charts';
-import { MyraEasyFormsModule } from '@myraeasy/forms';
-import { MyraEasyMenuModule } from '@myraeasy/menu';
-import { MyraeasyRelatoriosModule } from '@myraeasy/relatorios';
+
+import { MyraEasyFormsModule } from 'projects/myraeasy/forms/src/lib/forms.module';
+import { MyraEasyMenuModule } from 'projects/myraeasy/menu/src/lib/menu.module';
+import { ChartsModule } from 'projects/myraeasy/charts/src/lib/charts.module';
+// import { AccordionModule } from '@myraeasy/accordions';
+// import { ChartsModule } from '@myraeasy/charts';
+// import { MyraEasyFormsModule } from '@myraeasy/forms';
+// import { MyraEasyMenuModule } from '@myraeasy/menu';
+// import { MyraeasyRelatoriosModule } from '@myraeasy/relatorios';
 
 
 
@@ -42,11 +45,8 @@ import { MyraeasyRelatoriosModule } from '@myraeasy/relatorios';
         MyraEasyFormsModule,
         MyraEasyMenuModule,
         NoopAnimationsModule,
-        HighchartsChartModule,
-        ChartsModule,
+        
         NgbAccordionModule,
-        AccordionModule,
-        MyraeasyRelatoriosModule,
     ]
 })
 export class AppModule { }

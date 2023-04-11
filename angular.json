@@ -1,55 +1,63 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mycomponents": {
+    "@myraeasy/demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
         }
       },
-      "root": "",
-      "sourceRoot": "src",
+      "root": "projects/myraeasy/demo",
+      "sourceRoot": "projects/myraeasy/demo/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mycomponents",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
+            "outputPath": "dist/myraeasy/demo",
+            "index": "projects/myraeasy/demo/src/index.html",
+            "main": "projects/myraeasy/demo/src/main.ts",
+            "polyfills": "projects/myraeasy/demo/src/polyfills.ts",
+            "tsConfig": "projects/myraeasy/demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/myraeasy/demo/src/favicon.ico",
+              "projects/myraeasy/demo/src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "projects/myraeasy/demo/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "10mb",
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "10mb",
+                  "maximumError": "10mb"
                 }
               ],
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "projects/myraeasy/demo/src/environments/environment.ts",
+                  "with": "projects/myraeasy/demo/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -69,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "mycomponents:build:production"
+              "browserTarget": "@myraeasy/demo:build:production"
             },
             "development": {
-              "browserTarget": "mycomponents:build:development"
+              "browserTarget": "@myraeasy/demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,31 +88,215 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mycomponents:build"
+            "browserTarget": "@myraeasy/demo:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
+            "main": "projects/myraeasy/demo/src/test.ts",
+            "polyfills": "projects/myraeasy/demo/src/polyfills.ts",
+            "tsConfig": "projects/myraeasy/demo/tsconfig.spec.json",
+            "karmaConfig": "projects/myraeasy/demo/karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/myraeasy/demo/src/favicon.ico",
+              "projects/myraeasy/demo/src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "projects/myraeasy/demo/src/styles.scss"
             ],
             "scripts": []
           }
         }
       }
+    },
+    "@myraeasy/forms": {
+      "projectType": "library",
+      "root": "projects/myraeasy/forms",
+      "sourceRoot": "projects/myraeasy/forms/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/myraeasy/forms/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/myraeasy/forms/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/myraeasy/forms/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/myraeasy/forms/src/test.ts",
+            "tsConfig": "projects/myraeasy/forms/tsconfig.spec.json",
+            "karmaConfig": "projects/myraeasy/forms/karma.conf.js"
+          }
+        }
+      }
+    },
+    "@myraeasy/menu": {
+      "projectType": "library",
+      "root": "projects/myraeasy/menu",
+      "sourceRoot": "projects/myraeasy/menu/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/myraeasy/menu/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/myraeasy/menu/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/myraeasy/menu/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/myraeasy/menu/src/test.ts",
+            "tsConfig": "projects/myraeasy/menu/tsconfig.spec.json",
+            "karmaConfig": "projects/myraeasy/menu/karma.conf.js"
+          }
+        }
+      }
+    },
+    "@myraeasy/charts": {
+      "projectType": "library",
+      "root": "projects/myraeasy/charts",
+      "sourceRoot": "projects/myraeasy/charts/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/myraeasy/charts/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/myraeasy/charts/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/myraeasy/charts/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/myraeasy/charts/src/test.ts",
+            "tsConfig": "projects/myraeasy/charts/tsconfig.spec.json",
+            "karmaConfig": "projects/myraeasy/charts/karma.conf.js"
+          }
+        }
+      }
+    },
+    "@myraeasy/styles-myraeasy": {
+      "projectType": "library",
+      "root": "projects/myraeasy/styles-myraeasy",
+      "sourceRoot": "projects/myraeasy/styles-myraeasy/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/myraeasy/styles-myraeasy/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/myraeasy/styles-myraeasy/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/myraeasy/styles-myraeasy/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/myraeasy/styles-myraeasy/src/test.ts",
+            "tsConfig": "projects/myraeasy/styles-myraeasy/tsconfig.spec.json",
+            "karmaConfig": "projects/myraeasy/styles-myraeasy/karma.conf.js"
+          }
+        }
+      }
+    },
+    "@myraeasy/accordions": {
+      "projectType": "library",
+      "root": "projects/myraeasy/accordions",
+      "sourceRoot": "projects/myraeasy/accordions/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/myraeasy/accordions/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/myraeasy/accordions/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/myraeasy/accordions/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/myraeasy/accordions/src/test.ts",
+            "tsConfig": "projects/myraeasy/accordions/tsconfig.spec.json",
+            "karmaConfig": "projects/myraeasy/accordions/karma.conf.js"
+          }
+        }
+      }
+    },
+    "@myraeasy/relatorios": {
+      "projectType": "library",
+      "root": "projects/myraeasy/relatorios",
+      "sourceRoot": "projects/myraeasy/relatorios/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/myraeasy/relatorios/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/myraeasy/relatorios/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/myraeasy/relatorios/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/myraeasy/relatorios/src/test.ts",
+            "tsConfig": "projects/myraeasy/relatorios/tsconfig.spec.json",
+            "karmaConfig": "projects/myraeasy/relatorios/karma.conf.js"
+          }
+        }
+      }
     }
   },
-  "cli": {
-    "analytics": false
-  }
+    "defaultProject": "@myraeasy/demo"
 }
